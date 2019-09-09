@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 1,
-    tags: ["tag1", "tag2", "tag3"]
+    count: 0
   };
 
   handleIncrement = () => {
-    console.log("increment clicked", this);
+    //in react, use setState to update value!
+    //use js to increment count value
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
