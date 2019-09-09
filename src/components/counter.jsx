@@ -19,7 +19,7 @@ class Counter extends Component {
   formatCount() {
     const { count } = this.state; /* simplified this.state to count*/
 
-    return count === 0 ? "Zero" : count;
+    return count === 0 ? "Zero" : count; /* return yada2 : else return count*/
   }
 }
 
