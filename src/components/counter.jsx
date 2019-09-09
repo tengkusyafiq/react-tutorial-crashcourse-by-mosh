@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 1
+    count: 1,
+    tags: ["tag1", "tag2", "tag3"]
   };
 
   render() {
@@ -12,9 +13,16 @@ class Counter extends Component {
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/* call method formatCount*/}
         <button className="btn btn-secondary btn-sml">Increment</button>
+        {/* this will render a list from tags properties */}
+        <ul>
+          {this.state.tags.map(tag => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
       </div>
     );
   }
+
   getBadgeClasses() {
     let classes = "badge m-2 badge-"; //make variable for classname
     //append classes value with if else statement below
