@@ -2,14 +2,15 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    imageURL: "https://picsum.photos/200"
+    count: 0
   };
+
   render() {
     return (
       <div>
-        <img src={this.state.imageURL} alt="" />
-        <span className="badge badge-primary m2">{this.formatCount()}</span>
+        <span style={{ fontSize: 10 }} className="badge badge-primary m-2">
+          {this.formatCount()}
+        </span>
         {/* call method formatCount*/}
         <button className="btn btn-secondary btn-sml">Increment</button>
       </div>
