@@ -4,17 +4,16 @@ class Counter extends Component {
   state = {
     count: 0
   };
-  styles = {
-    fontSize: 10,
-    fontWeight: "bold"
-  };
 
   render() {
+    let classes = "badge m-2 badge-"; //make variable for classname
+    //append classes value with if else statement below
+    classes += this.state.count === 0 ? "warning" : "primary";
+
     return (
       <div>
-        <span style={this.styles} className="badge badge-primary m-2">
-          {this.formatCount()}
-        </span>
+        {/* use class variable as classname */}
+        <span className={classes}>{this.formatCount()}</span>
         {/* call method formatCount*/}
         <button className="btn btn-secondary btn-sml">Increment</button>
       </div>
