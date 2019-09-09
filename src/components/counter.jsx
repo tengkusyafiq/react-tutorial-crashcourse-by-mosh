@@ -2,17 +2,16 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0
+    count: 0,
+    imageURL: "https://picsum.photos/200"
   };
   render() {
     return (
       <div>
-        {/* this=referring to this class */}
-        {/* state.count=referring to object state, properties count */}
-        {/* line below print count value */}
-        {/* you can out any js script in {} */}
-        <span>{this.formatCount()}</span> {/* call method formatCount*/}
-        <button>Increment</button>
+        <img src={this.state.imageURL} alt="" />
+        <span className="badge badge-primary m2">{this.formatCount()}</span>
+        {/* call method formatCount*/}
+        <button className="btn btn-secondary btn-sml">Increment</button>
       </div>
     );
   }
