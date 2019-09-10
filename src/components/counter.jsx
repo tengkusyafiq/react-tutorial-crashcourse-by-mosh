@@ -10,14 +10,26 @@ class Counter extends Component {
     console.log(product);
     this.setState({ count: this.state.count + 1 });
   };
+  handleDecrement = product => {
+    console.log(product);
+    this.setState({ count: this.state.count - 1 });
+  };
 
   render() {
     return (
       <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={() => this.handleIncrement(product)}
-          className="btn btn-secondary btn-sml"
+          //onClick={() => this.handleIncrement(product)}
+          onClick={() => this.handleDecrement()}
+          className="btn btn-danger btn-sml m-2"
+        >
+          Decrement
+        </button>
+        <h1 className={this.getBadgeClasses()}>{this.formatCount()}</h1>
+        <button
+          //onClick={() => this.handleIncrement(product)}
+          onClick={() => this.handleIncrement()}
+          className="btn btn-success btn-sml m-2"
         >
           Increment
         </button>
@@ -28,7 +40,8 @@ class Counter extends Component {
   getBadgeClasses() {
     let classes = "badge m-2 badge-"; //make variable for classname
     //append classes value with if else statement below
-    classes += this.state.count === 0 ? "warning" : "primary";
+    //classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.count <= 0 ? "warning" : "primary";
     return classes;
   }
 
